@@ -1,0 +1,7 @@
+<h5 id="HtmlResult" class="text-white h4">{{headline}}</h5>
+<div><a class="text-white lead" href="#">{{synonyms}}</a></div>
+<div><a class="text-white lead" href="#">{{antonyms}}</a></div>
+<div><a class="text-white lead" href="#">{{definitions}}</a></div>
+<div><a class="text-white lead" href="#">{{drafts}}</a></div>
+<button onclick="location.href='settings.html'" class="btn btn-link text-primary"><i class="fa fa-cog fa-2x" aria-hidden="true" style="color:white"></i><span class="text-white lead">{{settings}}</span>
+                            </i></button>
