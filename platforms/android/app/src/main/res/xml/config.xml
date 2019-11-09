@@ -12,11 +12,11 @@
     </feature>
     <name>Shakespeare</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        Everyone can be a writer.
     </description>
     <icon src="res/icon.png" />
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="katarina.siposova.2@student.tuke.sk" href="#">
+        Katarina Siposova
     </author>
     <content src="index.html" />
     <access origin="*" />
