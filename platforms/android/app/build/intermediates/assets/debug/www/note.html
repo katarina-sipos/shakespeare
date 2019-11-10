@@ -12,7 +12,7 @@
     <script src="js/bootstrap/bootstrap.bundle.min.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/bootstrap.css" />
-    <link rel="stylesheet" href="css/mdb.min.css" />
+    <link rel="stylesheet" href="css/mdb.css" />
     <script src="js/bootstrap/mdb.min.js"></script>
     <link rel="stylesheet" href="css/fontawesome-free-5.11.2-web/css/fontawesome.min.css">
     <link rel="stylesheet" href="css/fontawesome-free-5.11.2-web/css/solid.min.css">
@@ -20,7 +20,7 @@
     <title>Shakespeare</title>
 </head>
 
-<body>
+<body onload="fillIn()">
     <nav class="navbar navbar-dark bg-dark">
         <a class="navbar-brand" href="index.html">
             <img src="img/ic_keyboard_arrow_left_white_48dp.png" width="30" height="30" class="d-inline-block align-top"
@@ -43,6 +43,29 @@
             </div>
         </div>
     </div>
+    <script>
+            function getUrlParameter(name) {
+        name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+        var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+        var results = regex.exec(location.search);
+        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    };
+            function fillIn(){
+                var url = new URL(location.href);
+
+                var noteName = url.searchParams.get("name");
+                var noteData = url.searchParams.get("data");
+                $('#form1').focus();
+    
+                $('#form1').val(noteName);
+                $('#form7').focus();
+
+                $('#form7').val(noteData);
+
+    
+    
+            }
+        </script>
     <script src="js/database.js"></script>
     <script src="mustache/mustache.min.js"></script>
     <script src="js/settings.js"></script>
