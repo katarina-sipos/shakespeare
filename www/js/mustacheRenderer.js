@@ -3,16 +3,14 @@ var menuDataENG = {
   synonyms: "Synonyms",
   antonyms: "Antonyms",
   definitions: "Definitions",
-  drafts: "Your drafts",
-  //settings: "Settings"
+  drafts: "Your drafts"
 };
 var menuDataSK = {
   headline: "Obsah",
   synonyms: "Synonymá",
   antonyms: "Antonymá",
   definitions: "Definície",
-  drafts: "Vaše poznámky",
-  //settings: "Nastavenia"
+  drafts: "Vaše poznámky"
 };
 var buttonsDataSK = {
   edit: "Upraviť",
@@ -82,10 +80,9 @@ function translate(appLanguage) {
     } else {
       rendered = Mustache.render(template, draftNameENG);
     }
-   
+
     $("#draftNameLabel").html("");
     $("#draftNameLabel").html(rendered);
-
   });
   $.get("templates/draftTextLabel.mst", function(template) {
     if (appLanguage == "SK") {
@@ -106,6 +103,3 @@ function translate(appLanguage) {
     $("#addNoteButton").html(rendered);
   });
 }
-
-
-

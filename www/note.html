@@ -43,29 +43,7 @@
             </div>
         </div>
     </div>
-    <script>
-            function getUrlParameter(name) {
-        name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-        var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-        var results = regex.exec(location.search);
-        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-    };
-            function fillIn(){
-                var url = new URL(location.href);
-
-                var noteName = url.searchParams.get("name");
-                var noteData = url.searchParams.get("data");
-                $('#form1').focus();
-    
-                $('#form1').val(noteName);
-                $('#form7').focus();
-
-                $('#form7').val(noteData);
-
-    
-    
-            }
-        </script>
+    <script src="js/editNote.js"></script>
     <script src="js/database.js"></script>
     <script src="mustache/mustache.min.js"></script>
     <script src="js/settings.js"></script>

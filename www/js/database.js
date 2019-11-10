@@ -1,3 +1,9 @@
+function openDB() {
+  return window.sqlitePlugin.openDatabase({
+    name: "shakespeare.db",
+    androidDatabaseImplementation: 2
+  });
+}
 function createSettingsTable(db) {
   db.transaction(
     function(tx) {
@@ -11,7 +17,7 @@ function createSettingsTable(db) {
   );
 }
 
-function retrieveSettingsFromDb(appLanguage,db) {
+function retrieveSettingsFromDb(appLanguage, db) {
   db.transaction(
     function(tx) {
       tx.executeSql("SELECT (language) FROM app_settings", [], function(
@@ -39,12 +45,12 @@ function updateSettingsDb(lang, db) {
       translate(lang);
     },
     function(err) {
-      alert("An error occurred while initializing the app2");
+      alert("An error occurred while loading the app settings");
     }
   );
 }
 
-function displayNotes(db){
+function displayNotes(db) {
   db.transaction(
     function(tx) {
       document.getElementById("data-list").innerHTML = "";
@@ -73,7 +79,7 @@ function displayNotes(db){
   );
 }
 
-function createTableNote(db){
+function createTableNote(db) {
   db.transaction(
     function(tx) {
       tx.executeSql(
@@ -86,15 +92,13 @@ function createTableNote(db){
   );
 }
 
-function addNoteToDB(db,name,text){
+function addNoteToDB(db, name, text) {
   db.transaction(
     function(tx) {
       tx.executeSql(
         "INSERT OR REPLACE INTO note (name, data,created_at) VALUES (?,?,CURRENT_TIMESTAMP)",
         [name, text],
-        function(tx, res) {
-          alert("Note Added");
-        }
+        function(tx, res) {}
       );
     },
     function(err) {
@@ -103,16 +107,13 @@ function addNoteToDB(db,name,text){
   );
 }
 
-function deleteNote(db,toDelete){
+function deleteNote(db, toDelete) {
   db.transaction(
     function(tx) {
-      tx.executeSql(
-        "DELETE FROM note WHERE name = (?);",
-        [toDelete],
-        function(tx, res) {
-          alert("Note deleted");
-        }
-      );
+      tx.executeSql("DELETE FROM note WHERE name = (?);", [toDelete], function(
+        tx,
+        res
+      ) {});
     },
     function(err) {
       alert("An error occured while deleting the note");
@@ -120,24 +121,24 @@ function deleteNote(db,toDelete){
   );
 }
 
-function loadNotefromDB(db,x){
+function loadNotefromDB(db, name) {
   var str1 = "note.html?name=";
-      var str2 = "&data=";
-      var y = "";
+  var str2 = "&data=";
+  var data = "";
   db.transaction(
     function(tx) {
       tx.executeSql(
         "SELECT (data) FROM note WHERE name = (?);",
-        [x],
+        [name],
         function(tx, res) {
-          y = res.rows.item(0).data;
-          var url = str1 + x + str2 + y;
+          data = res.rows.item(0).data;
+          var url = str1 + name + str2 + data;
           window.open(url);
         }
       );
     },
     function(err) {
-      alert("An error occured while deleting the note");
+      alert("Error happend while loading note.");
     }
   );
 }
