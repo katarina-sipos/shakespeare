@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sun Nov 10 19:15:23 CET 2019
+#Sun Nov 10 20:56:40 CET 2019
 1670.baseType=DIRECTORY
 1511.path=www/css/fontawesome-free-5.11.2-web/svgs/brands/hips.svg
 1391.set=ASSET

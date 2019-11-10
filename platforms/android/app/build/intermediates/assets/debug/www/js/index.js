@@ -15,15 +15,14 @@ var app = {
     $(document).on("click", "#addNoteButton", function() {
       createTableNote(db);
       var name = $("#form1").val();
-      var text = $("#form7").val();
+      var text = $("#form7").val(); 
       if (name == "") {
-        alert("Please enter name");
         return;
       }
       if (text == "") {
-        alert("Please enter text");
         return;
       }
+
       addNoteToDB(db, name, text);
     });
     var select = document.getElementById("sel");

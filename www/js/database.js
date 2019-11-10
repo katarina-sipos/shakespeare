@@ -40,7 +40,8 @@ function updateSettingsDb(lang, db) {
       tx.executeSql(
         "INSERT OR REPLACE INTO app_settings (sett_id,language) VALUES (?,?)",
         [1, lang],
-        function(tx, res) {}
+        function(tx, res) {
+        }
       );
       translate(lang);
     },
@@ -98,7 +99,9 @@ function addNoteToDB(db, name, text) {
       tx.executeSql(
         "INSERT OR REPLACE INTO note (name, data,created_at) VALUES (?,?,CURRENT_TIMESTAMP)",
         [name, text],
-        function(tx, res) {}
+        function(tx, res) {
+          alert("Added / Pridané");
+        }
       );
     },
     function(err) {
