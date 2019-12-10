@@ -1,45 +1,64 @@
-
 var app = {
+  initialize: function() {
+    document.addEventListener(
+      "deviceready",
+      this.onDeviceReady.bind(this),
+      false
+    );
+  },
+  onDeviceReady: function() {
+    var appLanguage = "";
+    var db = openDB();
+    createSettingsTable(db);
+    displayNotes(db);
+    retrieveSettingsFromDb(appLanguage, db);
+    $(document).on("click", "#addNoteButton", function() {
+      createTableNote(db);
+      var name = $("#form1").val();
+      var text = $("#form7").val(); 
+      if (name == "") {
+        return;
+      }
+      if (text == "") {
+        return;
+      }
 
-    initialize: function() {
-        document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
-    },
-
-    onDeviceReady: function() {
-        var db = null;
-        db = window.sqlitePlugin.openDatabase({ name: "shakespeare.db" , androidDatabaseImplementation: 2});
-        db.transaction(
-          function(tx) {
-            tx.executeSql(
-              "CREATE TABLE IF NOT EXISTS app_settings (sett_id integer primary key,language text default 'ENG');"
-            );
-          },
-          function(err) {
-            alert("An error occurred while initializing the app");
-          }
-        );
-        db.transaction(function(tx) {
-            tx.executeSql("SELECT (language) FROM app_settings;", [], function(tx,res){
-                alert(res.rows.item(0));
-            });
-        }, function(err){
-            alert("An error occured getting language");
-        });
-        // db.transaction(
-        //     function(tx) {
-        //       tx.executeSql(
-        //         "INSERT INTO app_settings (sett_id, language) VALUES (1,'SK')",
-        //         function(tx, res) {
-        //           alert("Note Added");
-        //         }
-        //       );
-        //     },
-        //     function(err) {
-        //       alert("An error occured while saving the note");
-        //     }
-        //   );
-    
-    }
+      addNoteToDB(db, name, text);
+    });
+    var select = document.getElementById("sel");
+    $(document).on("change", "#sel", function() {
+      var lang = select.options[select.selectedIndex].value;
+      updateSettingsDb(lang, db);
+    });
+    $(document).on("click", "#meanslike",function(){
+      callAPI('meanslike',$('#wordToSearch').val()); 
+    });
+    $(document).on("click", "#soundslike",function(){
+      callAPI('soundslike',$('#wordToSearch').val()); 
+    });
+    $(document).on("click", "#rhymeswith",function(){
+      callAPI('rhymeswith',$('#wordToSearch').val()); 
+    });
+    $(document).on("click", "#oppositeof",function(){
+      callAPI('oppositeof',$('#wordToSearch').val()); 
+    });
+    $(document).on("click", "#definition",function(){
+      callAPI('definition',$('#wordToSearch').val()); 
+    });
+    $(document).on("click", ".delete", function(elm) {
+      var toDelete = elm.target.parentNode.id;
+      deleteNote(db, toDelete);
+      var parent = document.getElementById(elm.target.parentNode.id);
+      var grandparent = parent.parentElement;
+      var toRemove = grandparent.parentElement;
+      toRemove.remove();
+    });
+    $(document).on("click", ".edit", function(elm) {
+      var name = elm.target.parentNode.id;
+      loadNotefromDB(db, name);
+    });
+  }
+  
 };
 
 app.initialize();

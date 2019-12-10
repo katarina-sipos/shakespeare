@@ -4,8 +4,8 @@
   "name": "Shakespeare",
   "short_name": "Shakespeare",
   "version": "sk.tuke.kpi.smart.shakespeare",
-  "description": "A sample Apache Cordova application that responds to the deviceready event.",
-  "author": "Apache Cordova Team",
+  "description": "Everyone can be a writer.",
+  "author": "Katarina Siposova",
   "icons": [
     {
       "src": "res/icon.png",

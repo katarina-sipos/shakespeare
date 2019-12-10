@@ -1,0 +1,2 @@
+<a href="#" class="btn btn-primary edit">{{edit}}</a>
+<a href="#" class="btn btn-primary delete">{{delete}}</a>

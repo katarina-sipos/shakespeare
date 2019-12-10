@@ -25,6 +25,7 @@ function retrieveSettingsFromDb(appLanguage, db) {
         res
       ) {
         appLanguage = res.rows.item(0).language;
+        localStorage.setItem("language",appLanguage);
         translate(appLanguage);
       });
     },
@@ -135,6 +136,7 @@ function loadNotefromDB(db, name) {
         [name],
         function(tx, res) {
           data = res.rows.item(0).data;
+          //data = data.replace(/\$/g, String.fromCharCode(13, 10) );
           var url = str1 + name + str2 + data;
           window.open(url);
         }

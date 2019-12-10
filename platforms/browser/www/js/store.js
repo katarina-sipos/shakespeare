@@ -1,0 +1,10 @@
+localStorage.setItem("soundslikeSK","Slová, ktoré znejú ako slovo ");
+localStorage.setItem("meanslikeSK", "Slová, ktoré znamenajú to, čo slovo ");
+localStorage.setItem("rhymeswithSK","Slová, ktoré sa rýmujú so slovom ");
+localStorage.setItem("oppositeofSK","Slová, ktoré sú opakom slova ");
+localStorage.setItem("definitionSK","Definícia slova ");
+localStorage.setItem("soundslikeENG","Words that sound like word ");
+localStorage.setItem("meanslikeENG", "Words that mean like word ");
+localStorage.setItem("rhymeswithENG","Words that rhyme with ");
+localStorage.setItem("oppositeofENG","Words that are the opposite of word ");
+localStorage.setItem("definitionENG","Definition of the word ");

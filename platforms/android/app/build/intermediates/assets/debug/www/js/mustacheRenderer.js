@@ -1,16 +1,18 @@
 var menuDataENG = {
-  headline: "Contents",
-  synonyms: "Synonyms",
-  antonyms: "Antonyms",
-  definitions: "Definitions",
-  drafts: "Your drafts"
+  definition: "Definiton of...",
+  find: "Find",
+  soundslike: "Sounds like...",
+  meanslike: "Means like...",
+  rhymeswith: "Rhyme with...",
+  oppositeof: "The opposite of..."
 };
 var menuDataSK = {
-  headline: "Obsah",
-  synonyms: "Synonymá",
-  antonyms: "Antonymá",
-  definitions: "Definície",
-  drafts: "Vaše poznámky"
+  definition: "Definícia...",
+  find: "Vyhľadať",
+  soundslike: "Znejúce ako...",
+  meanslike: "Znamenajúce to, čo...",
+  rhymeswith: "Rýmuje sa s...",
+  oppositeof: "Opakom..."
 };
 var buttonsDataSK = {
   edit: "Upraviť",

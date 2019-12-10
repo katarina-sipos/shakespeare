@@ -1,8 +1,16 @@
 
+                            <h5 id="HtmlResult" class="text-white h4">{{find}}</h5>
+<div id="definition" class="text-white lead">{{definition}}</div>
+<br>
+<div id="soundslike" class="text-white lead">{{soundslike}}</div>
+<br>
+<div id="meanslike" class="text-white lead">{{meanslike}}</div>
+<br>
+<div id="rhymeswith" class="text-white lead">{{rhymeswith}}</div>
+<br>
+<div id="oppositeof" class="text-white lead">{{oppositeof}}</div>
+<br>
+<br>
+<br>
 <button onclick="location.href='settings.html'" style="padding: 0" class="btn btn-link"><i class="fa fa-cog fa-2x" aria-hidden="true" style="color:white"></i><span class="text-white lead text-lowecase text-capitalize">
                             </i></button>
-                            <h5 id="HtmlResult" class="text-white h4">{{headline}}</h5>
-<div><a class="text-white lead" href="#">{{synonyms}}</a></div>
-<div><a class="text-white lead" href="#">{{antonyms}}</a></div>
-<div><a class="text-white lead" href="#">{{definitions}}</a></div>
-<div><a class="text-white lead" href="#">{{drafts}}</a></div>

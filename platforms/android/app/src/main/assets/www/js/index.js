@@ -30,6 +30,21 @@ var app = {
       var lang = select.options[select.selectedIndex].value;
       updateSettingsDb(lang, db);
     });
+    $(document).on("click", "#meanslike",function(){
+      callAPI('meanslike',$('#wordToSearch').val()); 
+    });
+    $(document).on("click", "#soundslike",function(){
+      callAPI('soundslike',$('#wordToSearch').val()); 
+    });
+    $(document).on("click", "#rhymeswith",function(){
+      callAPI('rhymeswith',$('#wordToSearch').val()); 
+    });
+    $(document).on("click", "#oppositeof",function(){
+      callAPI('oppositeof',$('#wordToSearch').val()); 
+    });
+    $(document).on("click", "#definition",function(){
+      callAPI('definition',$('#wordToSearch').val()); 
+    });
     $(document).on("click", ".delete", function(elm) {
       var toDelete = elm.target.parentNode.id;
       deleteNote(db, toDelete);
@@ -43,6 +58,7 @@ var app = {
       loadNotefromDB(db, name);
     });
   }
+  
 };
 
 app.initialize();

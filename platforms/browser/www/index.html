@@ -1,134 +1,74 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <!--<link rel="stylesheet" type="text/css" href="css/index.css">-->
-        <script src="js/jquery-3.4.1.min.js"></script>
-        <script src="js/bootstrap/bootstrap.bundle.min.js"></script>
-        <script src="js/bootstrap/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="css/bootstrap.min.css" />
-        <link rel="stylesheet" href="css/fontawesome-free-5.11.2-web/css/fontawesome.min.css">
-        <link rel="stylesheet" href="css/fontawesome-free-5.11.2-web/css/solid.min.css">
-        <title>Shakespeare</title>
-    </head>
-    <body>
-            <div class="pos-f-t">
-                    <div class="collapse" id="navbarToggleExternalContent">
-                        <div class="bg-dark p-4">
-                            <span id="HtmlResult"></span>
-                            <div><a class="text-white lead" href="#">Synonyms</a></div>
-                            <div><a class="text-white lead" href="#">Antonyms</a></div>
-                            <div><a class="text-white lead" href="#">Definitions</a></div>
-                            <div><a class="text-white lead" href="#">Your drafts</a></div>
-                            <button onclick="location.href='settings.html'" class="btn btn-link text-primary"><i class="fa fa-cog fa-2x" aria-hidden="true" style="color:white"></i><span class="text-white lead">Settings</span>
-                            </i></button>
-                        </div>
-                    </div>
-                    <nav class="navbar navbar-dark bg-dark">
-                        <span class="navbar-brand"class="navbar-brand">{{ appName }}</span>
-        
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                    </nav>
-                </div>
-          <!-- Page Content -->
-  <div class="container">
 
-    <!-- Jumbotron Header -->
-    <!--<header class="jumbotron my-4">
-      <h1 class="display-3">A Warm Welcome!</h1>
-      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
-      <a href="#" class="btn btn-primary btn-lg">Call to action!</a>
-    </header>--><button class="btn btn-link text-primary" id="settingsBtn"><i class="fa fa-cog fa-2x" aria-hidden="true" style="color:white"></i>
-    </i></button>
-    <button class="btn btn-link text-primary" id="settingsBtn"><i class="fa fa-cog fa-2x" aria-hidden="true" style="color:white"></i>
-    </i></button>
-    <!-- Page Features -->
-    <div class="row text-center">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta name="viewport"
+    content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="js/bootstrap/bootstrap.min.js"></script>
+  <script src="js/bootstrap/mdb.min.js"></script>
+  <link rel="stylesheet" href="css/bootstrap.css" /> 
+  <link rel="stylesheet" href="css/mdb.css"/>
+  <link rel="stylesheet" href="css/fontawesome-free-5.11.2-web/css/fontawesome.min.css"/>
+  <link rel="stylesheet" href="css/fontawesome-free-5.11.2-web/css/solid.min.css"/>
+  <title>Shakespeare</title>
+</head>
 
-      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card h-100">
-          <img class="card-img-top" src="http://placehold.it/500x325" alt="">
-          <div class="card-body">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-          </div>
-          <div class="card-footer">
-            <a id="ChangeLanguage" href="#" class="btn btn-primary">Find Out More!</a>
-          </div>
-        </div>
+<body>
+  <div class="pos-f-t fixed-top">
+    <div class="collapse" id="navbarToggleExternalContent">
+      <div class="bg-dark p-4">
+          <form class="form-inline md-form form-sm">
+              <input id="wordToSearch"class="form-control form-control-sm mr-3 w-75" type="text"
+                aria-label="Search">
+              <span><i class="fas fa-search" aria-hidden="true" style="color:white"></i></span>
+              <pre>  </pre>
+              <span><i class="fas fa-camera" aria-hidden="true" style="color:white"></i></span>
+            
+            </form>
+        <div id="menuData"></div>
       </div>
-
-      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card h-100">
-          <img class="card-img-top" src="http://placehold.it/500x325" alt="">
-          <div class="card-body">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo magni sapiente, tempore debitis beatae culpa natus architecto.</p>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary">Find Out More!</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card h-100">
-          <img class="card-img-top" src="http://placehold.it/500x325" alt="">
-          <div class="card-body">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary">Find Out More!</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card h-100">
-          <img class="card-img-top" src="http://placehold.it/500x325" alt="">
-          <div class="card-body">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo magni sapiente, tempore debitis beatae culpa natus architecto.</p>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary">Find Out More!</a>
-          </div>
-        </div>
-      </div>
-
     </div>
-    <!-- /.row -->
-
+    <nav class="navbar navbar-dark bg-dark">
+      <span class="navbar-brand" class="navbar-brand">Shakespeare</span>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent"
+        aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>
   </div>
+  <div class="container">
+    <div class="row">
+      <br>
+      <br>
+      <br>
+    </div>
+  <div class="row">
+      <a href="note.html" class="btn btn-link text-primary" id="addBtn"><i class="fa fa-plus-circle fa-3x"
+          aria-hidden="true" style="color:#2ea38b"></i>
+        </i></a>
+      <br>
+    </div> 
+    <div class="row">
+        <div class="col-lg-3 col-md-6 mb-4">
+        <div id="data-list">
+        </div>
+        </div>
+    </div>
+  </div>
+  <script src="js/store.js"></script>
   <script src="mustache/mustache.min.js"></script>
-  <!--<script id="mtemplate" type="text/template">
-    <h5 id="HtmlResult" class="text-white h4">{{content}}</h5>
-  </script>-->
   <script src="js/settings.js"></script>
-
   <script src="js/mustacheRenderer.js"></script>
-  <script>
+  <script src="js/database.js"></script>
+  <script src="js/datamuseAPI.js"></script>
+  <script src="js/display.js"></script>
+  <script type="text/javascript" src="cordova.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
+</body>
 
-
-       /* var data={
-    /*tent: "Menu"
-    /*
-    /*
-    /*
-    /*plate=document.getElementById("mtemplate").innerHTML;
-    /*
-        document.getElementById("HtmlResult").innerHTML=Mustache.render(template,data);*/
-    
-    
-    
-    </script>
-  <!-- /.container -->
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-    </body>
 </html>
