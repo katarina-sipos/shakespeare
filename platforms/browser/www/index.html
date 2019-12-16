@@ -13,21 +13,21 @@
   <script src="js/bootstrap/mdb.min.js"></script>
   <link rel="stylesheet" href="css/bootstrap.css" /> 
   <link rel="stylesheet" href="css/mdb.css"/>
+  <link rel="stylesheet" href="css/index.css"/>
   <link rel="stylesheet" href="css/fontawesome-free-5.11.2-web/css/fontawesome.min.css"/>
   <link rel="stylesheet" href="css/fontawesome-free-5.11.2-web/css/solid.min.css"/>
   <title>Shakespeare</title>
 </head>
-
 <body>
   <div class="pos-f-t fixed-top">
     <div class="collapse" id="navbarToggleExternalContent">
       <div class="bg-dark p-4">
           <form class="form-inline md-form form-sm">
-              <input id="wordToSearch"class="form-control form-control-sm mr-3 w-75" type="text"
+              <input id="wordToSearch" class="form-control form-control-sm mr-3 w-75 whiteIcon" type="text"
                 aria-label="Search">
-              <span><i class="fas fa-search" aria-hidden="true" style="color:white"></i></span>
+              <span><i class="fas fa-search whiteIcon" aria-hidden="true"></i></span>
               <pre>  </pre>
-              <span><i class="fas fa-camera" aria-hidden="true" style="color:white"></i></span>
+              <span id="capture"><i class="fas fa-camera whiteIcon" aria-hidden="true"></i></span>
             
             </form>
         <div id="menuData"></div>
@@ -60,6 +60,9 @@
         </div>
     </div>
   </div>
+  <script>
+  $("#wordToSearch").val(localStorage.getItem("tosearch"));
+  </script>
   <script src="js/store.js"></script>
   <script src="mustache/mustache.min.js"></script>
   <script src="js/settings.js"></script>

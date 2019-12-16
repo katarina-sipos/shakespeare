@@ -2,18 +2,29 @@ function displayResults() {
   var url = new URL(location.href);
   var constraint = url.searchParams.get("constraint");
   var htmlStr = "";
-  var arr;
+  var arr = null;
   var types;
-  var arrTypes;
-  if(constraint == "definition"){
+  var arrTypes = null;
+  if (constraint == "definition") {
     var storedDefs = localStorage.getItem("definitions");
     arr = storedDefs.split(",");
     types = localStorage.getItem("wordtypes");
-    arrTypes =types.split(',');
-  }
-  else{
+    arrTypes = types.split(",");
+    for (i = 0; i < arrTypes.length; i++) {
+      htmlStr = htmlStr.concat("<hr/>");
+      htmlStr = htmlStr.concat("<div class='word-types'>");
+      htmlStr = htmlStr.concat(arrTypes[i]);
+      htmlStr = htmlStr.concat("</div>");
+
+      htmlStr = htmlStr.concat(arr[i]);
+    }
+  } else {
     var storedWords = localStorage.getItem("words");
-     arr = storedWords.split(",");  
+    arr = storedWords.split(",");
+    for (i = 0; i < arr.length; i++) {
+      htmlStr = htmlStr.concat("<hr/>");
+      htmlStr = htmlStr.concat(arr[i]);
+    }
   }
   var lang = localStorage.getItem("language");
   var tosearch = localStorage.getItem("tosearch");
@@ -21,18 +32,9 @@ function displayResults() {
   toGet = toGet.concat(constraint);
   toGet = toGet.concat(lang);
   var toRender = localStorage.getItem(toGet);
+  tosearch = tosearch.toLowerCase();
   toRender = toRender.concat(tosearch);
   $("#sentence").html("");
   $("#sentence").html(toRender);
-  for (i = 0; i < arr.length; i++) {
-    htmlStr = htmlStr.concat("<hr/>");
-    if(arrTypes.length!=0){
-      htmlStr = htmlStr.concat("<div style='color:teal;'>");
-      htmlStr = htmlStr.concat(arrTypes[i]);
-      htmlStr = htmlStr.concat("<div/>");
-    }
-    htmlStr = htmlStr.concat(arr[i]);
-  }
   $("#here").html(htmlStr);
-
 }

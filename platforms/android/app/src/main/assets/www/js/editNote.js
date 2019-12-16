@@ -1,7 +1,8 @@
 function fillIn() {
   var url = new URL(location.href);
   var noteName = url.searchParams.get("name");
-  var noteData = url.searchParams.get("data");
+  var noteData = localStorage.getItem("noteContent");
+  localStorage.removeItem("noteContent");
   $("#form1").focus();
   $("#form1").val(noteName);
   $("#form7").focus();

@@ -10,6 +10,23 @@
     <feature name="Device">
         <param name="android-package" value="org.apache.cordova.device.Device" />
     </feature>
+    <feature name="Scan">
+        <param name="android-package" value="com.neutrinos.plugin.Scan" />
+    </feature>
+    <feature name="Textocr">
+        <param name="android-package" value="com.neutrinos.ocrplugin.Textocr" />
+    </feature>
+    <feature name="NetworkStatus">
+        <param name="android-package" value="org.apache.cordova.networkinformation.NetworkManager" />
+    </feature>
+    <feature name="Notification">
+        <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
+    </feature>
+    <feature name="File">
+        <param name="android-package" value="org.apache.cordova.file.FileUtils" />
+        <param name="onload" value="true" />
+    </feature>
+    <allow-navigation href="cdvfile:*" />
     <name>Shakespeare</name>
     <description>
         Everyone can be a writer.
@@ -28,4 +45,5 @@
     <allow-intent href="geo:*" />
     <allow-intent href="market:*" />
     <preference name="loglevel" value="DEBUG" />
+    <preference name="Orientation" value="portrait" />
 </widget>

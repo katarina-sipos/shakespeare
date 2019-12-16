@@ -25,7 +25,7 @@ function retrieveSettingsFromDb(appLanguage, db) {
         res
       ) {
         appLanguage = res.rows.item(0).language;
-        localStorage.setItem("language",appLanguage);
+        localStorage.setItem("language", appLanguage);
         translate(appLanguage);
       });
     },
@@ -41,8 +41,7 @@ function updateSettingsDb(lang, db) {
       tx.executeSql(
         "INSERT OR REPLACE INTO app_settings (sett_id,language) VALUES (?,?)",
         [1, lang],
-        function(tx, res) {
-        }
+        function(tx, res) {}
       );
       translate(lang);
     },
@@ -101,7 +100,8 @@ function addNoteToDB(db, name, text) {
         "INSERT OR REPLACE INTO note (name, data,created_at) VALUES (?,?,CURRENT_TIMESTAMP)",
         [name, text],
         function(tx, res) {
-          alert("Added / Pridané");
+          window.open("index.html");
+          //alert("Added / Pridané");
         }
       );
     },
@@ -129,6 +129,7 @@ function loadNotefromDB(db, name) {
   var str1 = "note.html?name=";
   var str2 = "&data=";
   var data = "";
+
   db.transaction(
     function(tx) {
       tx.executeSql(
@@ -136,8 +137,8 @@ function loadNotefromDB(db, name) {
         [name],
         function(tx, res) {
           data = res.rows.item(0).data;
-          //data = data.replace(/\$/g, String.fromCharCode(13, 10) );
-          var url = str1 + name + str2 + data;
+          var url = str1 + name + str2;
+          localStorage.setItem("noteContent", data);
           window.open(url);
         }
       );

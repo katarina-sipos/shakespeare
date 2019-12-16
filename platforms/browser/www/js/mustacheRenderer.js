@@ -36,7 +36,7 @@ var draftTextENG = {
   yourDraft: "Your draft"
 };
 var addBtnENG = {
-  addbtn: "Add draft"
+  addbtn: "Save draft"
 };
 var draftNameSK = {
   draftName: "Meno poznámky"
@@ -45,7 +45,7 @@ var draftTextSK = {
   yourDraft: "Vaša poznámka"
 };
 var addBtnSK = {
-  addbtn: "Pridať poznámku"
+  addbtn: "Uložiť poznámku"
 };
 var rendered;
 function translate(appLanguage) {

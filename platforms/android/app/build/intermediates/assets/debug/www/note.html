@@ -13,6 +13,7 @@
     <script src="js/bootstrap/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/bootstrap.css" />
     <link rel="stylesheet" href="css/mdb.css" />
+    <link rel="stylesheet" href="css/index.css"/>
     <script src="js/bootstrap/mdb.min.js"></script>
     <link rel="stylesheet" href="css/fontawesome-free-5.11.2-web/css/fontawesome.min.css">
     <link rel="stylesheet" href="css/fontawesome-free-5.11.2-web/css/solid.min.css">
@@ -22,10 +23,10 @@
 
 <body onload="fillIn()">
     <nav class="navbar navbar-dark bg-dark">
-        <a class="navbar-brand" href="index.html">
-            <img src="img/ic_keyboard_arrow_left_white_48dp.png" width="30" height="30" class="d-inline-block align-top"
+        <span class="navbar-brand">
+            <img id="back" src="img/ic_keyboard_arrow_left_white_48dp.png" width="30" height="30" class="d-inline-block align-top"
                 alt="">
-        </a>
+        </span>
     </nav>
     <div class="container">
         <div class="row"><br></div>
@@ -36,13 +37,14 @@
                     <label id="draftNameLabel" for="form1"></label>
                 </div>
                 <form class="md-form">
-                    <textarea id="form7" class="md-textarea form-control" rows="12" style='white-space: pre-wrap;'></textarea>
+                    <textarea id="form7" class="md-textarea form-control" rows="12"></textarea>
                     <label id="draftTextLabel" for="form7"></label>
                 </form>
                 <button class="btn btn-primary" id="addNoteButton"></button>
             </div>
         </div>
     </div>
+    <script src="js/note.js"></script>
     <script src="js/editNote.js"></script>
     <script src="js/database.js"></script>
     <script src="mustache/mustache.min.js"></script>

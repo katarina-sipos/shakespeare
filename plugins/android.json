@@ -15,6 +15,21 @@
     },
     "cordova-plugin-device": {
       "PACKAGE_NAME": "sk.tuke.kpi.smart.shakespeare"
+    },
+    "cordova-plugin-document-scanner": {
+      "PACKAGE_NAME": "sk.tuke.kpi.smart.shakespeare"
+    },
+    "cordova-plugin-mobile-ocr": {
+      "PACKAGE_NAME": "sk.tuke.kpi.smart.shakespeare"
+    },
+    "cordova-plugin-network-information": {
+      "PACKAGE_NAME": "sk.tuke.kpi.smart.shakespeare"
+    },
+    "cordova-plugin-dialogs": {
+      "PACKAGE_NAME": "sk.tuke.kpi.smart.shakespeare"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "sk.tuke.kpi.smart.shakespeare"
     }
   },
   "dependent_plugins": {}

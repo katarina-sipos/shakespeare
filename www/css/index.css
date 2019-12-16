@@ -1,0 +1,21 @@
+.word-types{
+    color:teal; 
+    font-style:italic;
+    font-weight: bold;
+}
+.sentence{
+    color:teal;
+    font-weight:bold;
+}
+.whiteIcon{
+    color:white;
+}
+.bg {
+    /* The image used */
+    width:100%;
+    height: 100%;
+}
+
+#wordToSearch:focus{
+    color:white;
+}
