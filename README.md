@@ -2,8 +2,7 @@
 
 Cordova based mobile app that serves as a heping tool for any writing.
 
-<img src="https://github.com/katarina-sipos/shakespeare/blob/master/search.jpg" alt="alt text" width="300" height="500">
-<img src="https://github.com/katarina-sipos/shakespeare/blob/master/rhymes.jpg" alt="alt text" width="300" height="500">
+<img src="https://github.com/katarina-sipos/shakespeare/blob/master/search.jpg" alt="alt text" width="300" height="500"><img src="https://github.com/katarina-sipos/shakespeare/blob/master/rhymes.jpg" alt="alt text" width="300" height="500">
 <img src="https://github.com/katarina-sipos/shakespeare/blob/master/note.jpg" alt="alt text" width="300" height="500">
 <img src="https://github.com/katarina-sipos/shakespeare/blob/master/definitions.jpg" alt="alt text" width="300" height="500">
 
