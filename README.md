@@ -2,6 +2,8 @@
 
 Cordova based mobile app that serves as a heping tool for any writing.
 
+![Funky](https://github.com/katarina-sipos/func-static-checker/blob/master/search.jpg?raw=true)
+
 # Shakespeare
 Shakespeare provides searching for synonyms, word definitions, sound-alikes, antonyms, rhymes and words having the same meaning of an input word.
 
